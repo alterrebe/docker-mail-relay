@@ -27,6 +27,8 @@ Variables
 * `EXT_RELAY_PORT=25`: External relay TCP port
 * `SMTP_LOGIN=`: Login to connect to the external relay (required, otherwise the container fails to start)
 * `SMTP_PASSWORD=`: Password to connect to the external relay (required, otherwise the container fails to start)
+* `USE_TLS=`: Remote require tls. Might be "yes" or "no". Default: no.
+* `TLS_VERIFY=`: Trust level for checking the remote side cert. (none, may, encrypt, dane, dane-only, fingerprint, verify, secure). Default: may.
 
 Example
 -------
