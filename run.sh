@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#! /usr/bin/env ash
 set -e # exit on error
 
 # Variables
@@ -23,4 +23,4 @@ postmap /etc/postfix/sasl_passwd
 
 # Launch
 rm -f /var/spool/postfix/pid/*.pid
-exec /usr/bin/supervisord -n
+exec /usr/bin/supervisord -n -c /etc/supervisord.conf
