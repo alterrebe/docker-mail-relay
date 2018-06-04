@@ -21,6 +21,9 @@ j2 /root/conf/postfix-main.cf > /etc/postfix/main.cf
 j2 /root/conf/sasl_passwd > /etc/postfix/sasl_passwd
 postmap /etc/postfix/sasl_passwd
 
+# Custom aliases
+newaliases
+
 # Launch
 rm -f /var/spool/postfix/pid/*.pid
 exec /usr/bin/supervisord -n -c /etc/supervisord.conf
