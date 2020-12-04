@@ -29,6 +29,7 @@ Variables
 * `SMTP_PASSWORD=`: Password to connect to the external relay (required, otherwise the container fails to start)
 * `USE_TLS=`: Remote require tls. Might be "yes" or "no". Default: no.
 * `TLS_VERIFY=`: Trust level for checking the remote side cert. (none, may, encrypt, dane, dane-only, fingerprint, verify, secure). Default: may.
+* `INBOUND_TLS=`: Server offers tls. Might be "yes" or "no". Default: yes.
 
 Example
 -------
