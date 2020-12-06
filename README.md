@@ -21,15 +21,15 @@ Exports
 Variables
 ---------
 
-* `RELAY_HOST_NAME=relay.example.com`: A DNS name for this relay container (usually the same as the Docker's hostname)
-* `ACCEPTED_NETWORKS=192.168.0.0/16 172.16.0.0/12 10.0.0.0/8`: A network (or a list of networks) to accept mail from
+* `RELAY_HOST_NAME=relay.example.com`: DNS name for this relay container (usually the same as the Docker's hostname)
+* `ACCEPTED_NETWORKS=192.168.0.0/16 172.16.0.0/12 10.0.0.0/8`: Network (or a list of networks) to accept mail from
 * `EXT_RELAY_HOST=email-smtp.us-east-1.amazonaws.com`: External relay DNS name
 * `EXT_RELAY_PORT=25`: External relay TCP port
 * `SMTP_LOGIN=`: Login to connect to the external relay (required, otherwise the container fails to start)
 * `SMTP_PASSWORD=`: Password to connect to the external relay (required, otherwise the container fails to start)
-* `USE_TLS=`: Remote require tls. Might be "yes" or "no". Default: no.
+* `USE_TLS=`: Whether the external relay requires TLS. Might be "yes" or "no". Default: no.
 * `TLS_VERIFY=`: Trust level for checking the remote side cert. (none, may, encrypt, dane, dane-only, fingerprint, verify, secure). Default: may.
-* `INBOUND_TLS=`: Server offers tls. Might be "yes" or "no". Default: yes.
+* `INBOUND_TLS=`: Whether the Postfix supports TLS on inbound connections. Might be "yes" or "no". Default: yes.
 
 Example
 -------
