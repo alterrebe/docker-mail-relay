@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.12
 MAINTAINER Uri Savelchev <alterrebe@gmail.com>
 
 # Packages: update
