@@ -14,6 +14,7 @@ export ACCEPTED_NETWORKS=${ACCEPTED_NETWORKS:-"192.168.0.0/16 172.16.0.0/12 10.0
 export USE_TLS=${USE_TLS:-"no"}
 export TLS_VERIFY=${TLS_VERIFY:-"may"}
 export INBOUND_TLS=${INBOUND_TLS:-"yes"}
+export RAW_CONFIG=${RAW_CONFIG:-""}
 
 echo $RELAY_HOST_NAME > /etc/mailname
 
