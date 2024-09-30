@@ -26,6 +26,10 @@ postmap /etc/postfix/sasl_passwd
 # Custom aliases
 newaliases
 
+# Sender/recipient rewrites
+postmap /etc/postfix/sender_canonical
+postmap /etc/postfix/recipient_canonical
+
 # Launch
 rm -f /var/spool/postfix/pid/*.pid
 exec /usr/bin/supervisord -n -c /etc/supervisord.conf
