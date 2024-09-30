@@ -32,12 +32,17 @@ Variables
 * `INBOUND_TLS=`: Whether the Postfix supports TLS on inbound connections. Might be "yes" or "no". Default: yes.
 * `RAW_CONFIG=`: Possiblity to add raw postfix configuration parameters, use with care.
 
+Files
+-----
+*/etc/postfix/sender_canonical* : Mount a text file to rewrite sender addresses: e.g., use `@local.domain @public.domain.com` to rewrite the local domain without altering the user. See [documentation](https://www.postfix.org/canonical.5.html) for complete usage.
+*/etc/postfix/recipient_canonical* : Mount a text file to rewrite recipient addresses: e.g., use `@local.domain admin@public.domain.com` to redirect local domain mail. See [documentation](https://www.postfix.org/canonical.5.html) for complete usage.
+
 Example
 -------
 
 Launch Postfix container:
 
-    $ docker run -d -h relay.example.com --name="mailrelay" -e SMTP_LOGIN=myLogin -e SMTP_PASSWORD=myPassword -p 25:25 alterrebe/postfix-relay
+    $ docker run -d -h relay.example.com --name="mailrelay" -e SMTP_LOGIN=myLogin -e SMTP_PASSWORD=myPassword -v your_sender_canonical:/etc/postfix/sender_canonical -v your_recipient_canonical:/etc/postfix/recipient_canonical -p 25:25 alterrebe/postfix-relay
 
 
 Running with Docker Compose:
@@ -59,4 +64,7 @@ services:
       RAW_CONFIG: |
         # custom config
         always_bcc = bcc@example.com
+    volumes:
+      - your_sender_canonical:/etc/postfix/sender_canonical
+      - your_recipient_canonical:/etc/postfix/recipient_canonical
 ```
