@@ -30,6 +30,9 @@ newaliases
 postmap /etc/postfix/sender_canonical
 postmap /etc/postfix/recipient_canonical
 
+# Transport Map Support
+postmap /etc/postfix/transport_maps
+
 # Launch
 rm -f /var/spool/postfix/pid/*.pid
 exec /usr/bin/supervisord -n -c /etc/supervisord.conf
