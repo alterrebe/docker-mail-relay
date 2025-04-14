@@ -37,6 +37,7 @@ alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 sender_canonical_maps = hash:/etc/postfix/sender_canonical
 recipient_canonical_maps = hash:/etc/postfix/recipient_canonical
+transport_maps = hash:/etc/postfix/transport_maps
 myorigin = /etc/mailname
 mydestination = {{ RELAY_HOST_NAME }}, localhost
 relayhost = {{ EXT_RELAY_HOST }}:{{ EXT_RELAY_PORT }}
